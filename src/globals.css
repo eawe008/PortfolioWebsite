@@ -1,30 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* ---------- Base styles ---------- */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-white text-gray-800;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-gray-900 font-semibold;
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-700 transition-colors;
   }
 }
 
+/* ---------- Components ---------- */
+@layer components {
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+      rounded-lg bg-blue-600 px-5 py-2.5
+      text-sm font-medium text-white
+      shadow-sm transition
+      hover:bg-blue-700
+      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+      rounded-lg border border-gray-300
+      bg-white px-5 py-2.5
+      text-sm font-medium text-gray-700
+      shadow-sm transition
+      hover:bg-gray-50
+      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Section wrapper */
+  .section {
+    @apply max-w-6xl mx-auto px-6 py-16;
+  }
+
+  /* Card style */
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white p-6 shadow-sm;
+  }
+}
+
+/* ---------- Utilities ---------- */
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.8s ease-out both;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+
 }

@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import '../index.css';
+import '../globals.css';
 
 
 const Header = () => {

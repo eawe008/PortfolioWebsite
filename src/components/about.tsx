@@ -1,5 +1,5 @@
 import { Code, Rocket, Users } from 'lucide-react';
-import '../index.css';
+import '../globals.css';
 
 const About = () => {
   const highlights = [
