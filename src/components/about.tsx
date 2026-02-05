@@ -1,5 +1,4 @@
 import { Code, Rocket, Users } from 'lucide-react';
-import '../globals.css';
 
 const About = () => {
   const highlights = [
@@ -21,19 +20,20 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">About Me</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <section id="about" className="section-wrap bg-white">
+      <div className="section-inner">
+        <h2 className="section-title">About Me</h2>
+        <div className="section-accent" />
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Workspace"
-              className="rounded-lg shadow-xl"
+              className="about-image"
             />
           </div>
+
           <div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
               Passionate Developer & Problem Solver
@@ -55,12 +55,9 @@ const About = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {highlights.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow"
-            >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <item.icon className="text-blue-600" size={24} />
+            <div key={index} className="highlight-card">
+              <div className="icon-badge">
+                <item.icon className="icon-badge-icon" size={24} />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
               <p className="text-gray-600">{item.description}</p>

@@ -6,6 +6,7 @@ import Projects from './components/projects';
 import Skills from './components/skills';
 import Contact from './components/contact';
 import Footer from './components/footer';
+import Writeup from './writeup';
 import "./globals.css";
 
 
@@ -28,6 +29,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/article/:slug" element={<Writeup />} />
       </Routes>
     </Router>
   );

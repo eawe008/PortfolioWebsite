@@ -31,42 +31,27 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">My Projects</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <section id="projects" className="section-wrap">
+      <div className="section-inner">
+        <h2 className="section-title">My Projects</h2>
+        <div className="section-accent" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
-            >
+            <div key={index} className="project-card">
               <div className="relative overflow-hidden group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                <img src={project.image} alt={project.title} className="project-img" />
+
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                   {project.slug && (
-                    <Link
-                      to={`/article/${project.slug}`}
-                      className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-                    >
+                    <Link to={`/article/${project.slug}`} className="icon-btn" aria-label="Read article">
                       <BookOpen size={20} />
                     </Link>
                   )}
-                  <a
-                    href={project.liveUrl}
-                    className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-                  >
+                  <a href={project.liveUrl} className="icon-btn" aria-label="Open live demo">
                     <ExternalLink size={20} />
                   </a>
-                  <a
-                    href={project.githubUrl}
-                    className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-                  >
+                  <a href={project.githubUrl} className="icon-btn" aria-label="Open GitHub repo">
                     <Github size={20} />
                   </a>
                 </div>
@@ -75,12 +60,10 @@ const Projects = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 text-xs rounded-full"
-                    >
+                    <span key={tagIndex} className="tag-pill">
                       {tag}
                     </span>
                   ))}
